@@ -8,10 +8,10 @@ document.getElementById('result-form').addEventListener('submit', function(event
             const result = data.find(item => item.registration_number === registrationNumber);
             if (result) {
                 document.getElementById('result').innerHTML = result.status === 'LULUS' 
-                    ? 'Selamat! Anda dinyatakan LULUS.' 
-                    : 'Maaf, Anda BELUM LULUS.';
+                    ? '<p class="success">Selamat! Anda dinyatakan LULUS.</p>' 
+                    : '<p class="failure">Maaf, Anda BELUM LULUS.</p>';
             } else {
-                document.getElementById('result').innerHTML = 'Nomor pendaftaran tidak ditemukan.';
+                document.getElementById('result').innerHTML = '<p class="not-found">Nomor pendaftaran tidak ditemukan.</p>';
             }
         })
         .catch(error => {
